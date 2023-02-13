@@ -1,5 +1,6 @@
-package collections;
+package collections.basics;
 
+import collections.basics.Queue;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,9 +14,9 @@ class QueueTest {
         int expectedFrontResult = -1;
         int expectedRearResult = -1;
 
-        int actualLengthResult = emptyQueue.arr.length;
-        int actualFrontResult = emptyQueue.front;
-        int actualRearResult = emptyQueue.rear;
+        int actualLengthResult = emptyQueue.getArr().length;
+        int actualFrontResult = emptyQueue.getFront();
+        int actualRearResult = emptyQueue.getRear();
 
         assertEquals(expectedFrontResult, actualFrontResult);
         assertEquals(expectedLengthResult, actualLengthResult);
@@ -29,9 +30,9 @@ class QueueTest {
         int expectedFrontResult = -1;
         int expectedRearResult = -1;
 
-        int actualLengthResult = emptyQueue.arr.length;
-        int actualFrontResult = emptyQueue.front;
-        int actualRearResult = emptyQueue.rear;
+        int actualLengthResult = emptyQueue.getArr().length;
+        int actualFrontResult = emptyQueue.getFront();
+        int actualRearResult = emptyQueue.getRear();
 
         assertEquals(expectedFrontResult, actualFrontResult);
         assertEquals(expectedLengthResult, actualLengthResult);
@@ -46,9 +47,9 @@ class QueueTest {
         int expectedFrontResult = -1;
         int expectedRearResult = -1;
 
-        int actualLengthResult = emptyQueue.arr.length;
-        int actualFrontResult = emptyQueue.front;
-        int actualRearResult = emptyQueue.rear;
+        int actualLengthResult = emptyQueue.getArr().length;
+        int actualFrontResult = emptyQueue.getFront();
+        int actualRearResult = emptyQueue.getRear();
 
         assertEquals(expectedFrontResult, actualFrontResult);
         assertEquals(expectedLengthResult, actualLengthResult);
@@ -63,8 +64,8 @@ class QueueTest {
         boolean actualResult = fullQueue.addRear(3);
 
         assertFalse(actualResult);
-        assertEquals(1, fullQueue.rear);
-        assertEquals(0, fullQueue.front);
+        assertEquals(1, fullQueue.getRear());
+        assertEquals(0, fullQueue.getFront());
     }
 
     @Test
@@ -73,8 +74,8 @@ class QueueTest {
         boolean actualResult = queue.addRear(10);
 
         assertTrue(actualResult);
-        assertEquals(0, queue.front);
-        assertEquals(0, queue.rear);
+        assertEquals(0, queue.getFront());
+        assertEquals(0, queue.getRear());
     }
 
     @Test
@@ -85,8 +86,8 @@ class QueueTest {
         boolean actualResult = queue.addRear(20);
 
         assertTrue(actualResult);
-        assertEquals(0, queue.front);
-        assertEquals(2, queue.rear);
+        assertEquals(0, queue.getFront());
+        assertEquals(2, queue.getRear());
     }
 
     @Test
@@ -102,8 +103,8 @@ class QueueTest {
         int actualResult = queue.deleteFront();
 
         assertEquals(expectedResult, actualResult);
-        assertEquals(-1, queue.front);
-        assertEquals(-1, queue.rear);
+        assertEquals(-1, queue.getFront());
+        assertEquals(-1, queue.getRear());
     }
 
 
@@ -114,8 +115,8 @@ class QueueTest {
         emptyQueue.deleteFront();
 
         assertThrows(IllegalStateException.class, emptyQueue::deleteFront);
-        assertEquals(-1, emptyQueue.front);
-        assertEquals(-1, emptyQueue.rear);
+        assertEquals(-1, emptyQueue.getFront());
+        assertEquals(-1, emptyQueue.getRear());
     }
 
     @Test
@@ -129,8 +130,8 @@ class QueueTest {
         int actualResult = queue.deleteFront();
 
         assertEquals(expectedResult, actualResult);
-        assertEquals(1, queue.front);
-        assertEquals(2, queue.rear);
+        assertEquals(1, queue.getFront());
+        assertEquals(2, queue.getRear());
     }
 
 

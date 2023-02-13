@@ -1,9 +1,9 @@
-package collections;
+package collections.basics;
 
 public class Stack {
-    int[] arr;
-    int top;
-    int len;
+    private int[] arr;
+    private int top;
+    private int len;
 
     public Stack(int len) {
         initialSetUpLength(len);
@@ -43,11 +43,23 @@ public class Stack {
     private String printStack() {
         StringBuilder output = new StringBuilder();
 
-        for (Integer i : arr) {
-            output.append(i).append(", ");
+        for (int i = 0; i <= top; i++) {
+            output.append(arr[i]).append(", ");
         }
 
-        return output.substring(0, output.length() - 2);
+        return (output.length() > 2) ? output.substring(0, output.length() - 2) : "";
+    }
+
+    public int[] getArr() {
+        return arr;
+    }
+
+    public int getTop() {
+        return top;
+    }
+
+    public int getLen() {
+        return len;
     }
 
     @Override

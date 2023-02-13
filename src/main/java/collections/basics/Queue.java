@@ -1,9 +1,9 @@
-package collections;
+package collections.basics;
 
 public class Queue {
-    int[] arr;
-    int front;
-    int rear;
+    private int[] arr;
+    private int front;
+    private int rear;
 
     public Queue(int len) {
         initialSetUpLength(len);
@@ -63,11 +63,27 @@ public class Queue {
     private String printStack() {
         StringBuilder output = new StringBuilder();
 
-        for (Integer i : arr) {
-            output.append(i).append(", ");
+        if (front == -1 && rear == -1) {
+            return "";
+        }
+
+        for (int i = front; i <= rear; i++) {
+            output.append(arr[i]).append(", ");
         }
 
         return output.substring(0, output.length() - 2);
+    }
+
+    public int[] getArr() {
+        return arr;
+    }
+
+    public int getFront() {
+        return front;
+    }
+
+    public int getRear() {
+        return rear;
     }
 
     @Override

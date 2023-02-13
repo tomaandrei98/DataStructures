@@ -1,5 +1,6 @@
-package collections;
+package collections.basics;
 
+import collections.basics.Stack;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,9 +14,9 @@ class StackTest {
         int expectedLengthResult = 0;
         int expectedTopResult = -1;
 
-        int actualLenResult = emptyStack.len;
-        int actualLengthResult = emptyStack.arr.length;
-        int actualTopResult = emptyStack.top;
+        int actualLenResult = emptyStack.getLen();
+        int actualLengthResult = emptyStack.getArr().length;
+        int actualTopResult = emptyStack.getTop();
 
         assertEquals(expectedLenResult, actualLenResult);
         assertEquals(expectedLengthResult, actualLengthResult);
@@ -29,9 +30,9 @@ class StackTest {
         int expectedLengthResult = 10;
         int expectedTopResult = -1;
 
-        int actualLenResult = emptyStack.len;
-        int actualLengthResult = emptyStack.arr.length;
-        int actualTopResult = emptyStack.top;
+        int actualLenResult = emptyStack.getLen();
+        int actualLengthResult = emptyStack.getArr().length;
+        int actualTopResult = emptyStack.getTop();
 
         assertEquals(expectedLenResult, actualLenResult);
         assertEquals(expectedLengthResult, actualLengthResult);
@@ -45,9 +46,9 @@ class StackTest {
         int expectedLengthResult = 2;
         int expectedTopResult = -1;
 
-        int actualLenResult = emptyStack.len;
-        int actualLengthResult = emptyStack.arr.length;
-        int actualTopResult = emptyStack.top;
+        int actualLenResult = emptyStack.getLen();
+        int actualLengthResult = emptyStack.getArr().length;
+        int actualTopResult = emptyStack.getTop();
 
         assertEquals(expectedLenResult, actualLenResult);
         assertEquals(expectedLengthResult, actualLengthResult);
@@ -68,7 +69,7 @@ class StackTest {
         boolean actualResult = stack.push(10);
 
         assertTrue(actualResult);
-        assertEquals(stack.top, 0);
+        assertEquals(stack.getTop(), 0);
     }
 
     @Test
@@ -87,7 +88,7 @@ class StackTest {
         int actualResult = stack.pop();
 
         assertEquals(expectedResult, actualResult);
-        assertEquals(stack.top, -1);
+        assertEquals(stack.getTop(), -1);
     }
 
 
@@ -102,7 +103,7 @@ class StackTest {
         int actualResult = stack.pop();
 
         assertEquals(expectedResult, actualResult);
-        assertEquals(stack.top, 3);
+        assertEquals(stack.getTop(), 3);
     }
 
     @Test
@@ -117,7 +118,7 @@ class StackTest {
         int actualResult = stack.pop();
 
         assertEquals(expectedResult, actualResult);
-        assertEquals(stack.top, 2);
+        assertEquals(stack.getTop(), 2);
     }
 
     @Test
