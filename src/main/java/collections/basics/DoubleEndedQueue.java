@@ -1,5 +1,7 @@
 package collections.basics;
 
+import java.util.Arrays;
+
 public class DoubleEndedQueue {
     private int[] arr;
     private int front;
@@ -92,5 +94,31 @@ public class DoubleEndedQueue {
         int temp = arr[rear];
         rear--;
         return temp;
+    }
+
+
+    public int[] getArr() {
+        int[] result = new int[rear+1];
+        for (int i = front, j = 0; i <= rear && j <= rear; i++, j++) {
+            result[j] = arr[i];
+        }
+        return result;
+    }
+
+    public int getFront() {
+        return front;
+    }
+
+    public int getRear() {
+        return rear;
+    }
+
+    @Override
+    public String toString() {
+        return "DoubleEndedQueue{" +
+                "arr=" + Arrays.toString(arr) +
+                ", front=" + front +
+                ", rear=" + rear +
+                '}';
     }
 }
