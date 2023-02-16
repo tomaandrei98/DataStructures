@@ -1,4 +1,4 @@
-package collections.implementation.linkedList;
+package collections.implementation.linkedList.doubleLinkedList;
 
 public class Node {
     private int data;
